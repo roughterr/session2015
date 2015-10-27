@@ -1,5 +1,9 @@
 package org.nau;
 
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 /**
  * Тестування першої лаби. Варіант №18.
  */
@@ -41,24 +45,31 @@ public class Lab1Test {
     /**
      * Тестування черги з цілими беззнаковими елементами. В main-метод не включено, бо таке тестування не передбачено
      * в завданні.
-     *
      * @throws Exception
      */
+    @Test
     @Deprecated
     public void testAddingElementsToQueue() throws Exception {
         Queue queue = new Queue();
-        System.out.println("Empty queue: " + queue);
+        assertEquals("array='[0, 0, 0, 0, 0]', headIndex='-1'.", queue.toString());
         queue.add(45);
-        System.out.println("Queue after adding 45: " + queue);
+        assertEquals("array='[45, 0, 0, 0, 0]', headIndex='0'.", queue.toString());
         queue.add(31);
-        System.out.println("Queue after adding 31: " + queue);
+        assertEquals("array='[45, 31, 0, 0, 0]', headIndex='1'.", queue.toString());
         for (int i = 0; i < 10; i++) {
-            int numberToInsert = i * 4;
-            queue.add(numberToInsert);
-            System.out.println("Queue after adding '" + numberToInsert + "': " + queue);
+            final int numberToInsert = i * 4;
+            final boolean resultOfAdding = queue.add(numberToInsert);
+            assertEquals(i < 3, resultOfAdding); //перевірити, що більше 5 елементів ми не можемо вставити в чергу
+            if (i > 1) { //перевірка, що при додаванні нових елементів в переповнену чергу нічого не відбувається
+                assertEquals("array='[45, 31, 0, 4, 8]', headIndex='4'.", queue.toString());
+            }
         }
         //видалення одного елемента з черги
         queue.deleteOldestElement();
-        System.out.println("After deletion of one element from the queue: " + queue);
+        assertEquals("array='[31, 0, 4, 8, 0]', headIndex='3'.", queue.toString());
+        queue.deleteOldestElement();
+        assertEquals("array='[0, 4, 8, 0, 0]', headIndex='2'.", queue.toString());
+        queue.deleteOldestElement();
+        assertEquals("array='[4, 8, 0, 0, 0]', headIndex='1'.", queue.toString());
     }
 }
