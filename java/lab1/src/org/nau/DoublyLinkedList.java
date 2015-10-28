@@ -66,7 +66,7 @@ public class DoublyLinkedList {
      * @param val
      * @return true - вставка пройшла успішно
      */
-    public boolean addElementToHead(int val) {
+        public boolean addElementToHead(int val) {
         Node newFirstNode = new Node(val);
         if (!isEmpty()) {
             //для нової ноди наступною нодою буде та нода, яка на даний момент є першою нодою

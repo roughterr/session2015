@@ -14,7 +14,7 @@ public class Student {
     private boolean optionalLessons;
 
     /** Бал. */
-    private int mark;
+    private double mark;
 
     /**
      * Конструктор
@@ -23,7 +23,7 @@ public class Student {
      * @param optionalLessons чи ходить студент на факультатив
      * @param mark            бал
      */
-    public Student(String lastName, String firstName, boolean optionalLessons, int mark) {
+    public Student(String lastName, String firstName, boolean optionalLessons, double mark) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.optionalLessons = optionalLessons;
@@ -55,7 +55,7 @@ public class Student {
      * Повертає бал.
      * @return
      */
-    public int getMark() {
+    public double getMark() {
         return mark;
     }
 
