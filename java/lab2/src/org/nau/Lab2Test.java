@@ -80,7 +80,7 @@ public class Lab2Test {
         final Rhombus rhombus2 = new Rhombus(-1, 0, 0, -1, -1, -2, -2, -1);
         NAUHashtable<Perimeter, Rhombus> hashtable = new NAUHashtable<>();
         hashtable.put(perimeter1, rhombus1);
-        assertTrue("Rhombus #1 has not been found in the hashtable.", hashtable.containsValue(rhombus1));
+        assertTrue("Rhombus #1 has not been added to the hashtable.", hashtable.containsValue(rhombus1));
         hashtable.put(perimeter2, rhombus2);
         //хеш-таблиця не повинна містити ромбу №1
         assertFalse("Rhombus #1 has not been deleted from the hashtable.", hashtable.containsValue(rhombus1));

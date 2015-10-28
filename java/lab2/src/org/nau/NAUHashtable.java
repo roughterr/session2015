@@ -70,55 +70,21 @@ public class NAUHashtable<K, V> {
     }
 
     /**
-     * Інкапсулює хешкод з можливістю згенерувати інший хеш-код для того самого ключа,
-     * з метою реалізації квадратичного зонування (Quadratic Probing).
-     */
-    private static class HashCodeToProbe {
-        private final int hashcode;
-        private final int h;
-
-        public HashCodeToProbe(int hashcode) {
-            this.hashcode = hashcode;
-            this.h = 1;
-        }
-
-        private HashCodeToProbe(int hashcode, int h) {
-            this.hashcode = hashcode;
-            this.h = h;
-        }
-
-        public HashCodeToProbe next() {
-            final int newH = h + 1;
-            //TODO (index * index) % size
-            return new HashCodeToProbe(hashcode + (newH * newH), newH);
-        }
-
-        public int getHashcode() {
-            return hashcode;
-        }
-
-        public int getH() {
-            return h;
-        }
-    }
-
-    /**
      * Здійснює пошук елементу в хеш-таблиці.
      * @param key ключ елементу
      * @return індекс елементу. Якщо елемента не знайдено, то повернення значення -1
      */
     public int findExistingElement(K key) {
-        for (HashCodeToProbe hashCodeToProbe = new HashCodeToProbe(key.hashCode());
-             hashCodeToProbe.getH() < table.length;
-             hashCodeToProbe = hashCodeToProbe.next()) {
-            final int index = calcIndexByHashcode(hashCodeToProbe.getHashcode());
-            HashtableEntry<K, V> element = table[index];
-            if (element != null) {
-                final boolean resultOfComparison = key.equals(element.getKey());
-                if (resultOfComparison) {
-                    return index;
-                }
+        int index = calcIndexByHashcode(key.hashCode());
+        int k = 0;
+        //кількість ітерацій має бути не більшою, ніж кількість елементів в масиві
+        for (int i = 0; i < table.length * 2; i++) {
+            //якщо вільну комірку знайдено
+            if (table[index] != null && table[index].getKey().equals(key)) {
+                return index;
             }
+            k++;
+            index = (index + k * k) % table.length;
         }
         return -1;
     }
@@ -129,13 +95,16 @@ public class NAUHashtable<K, V> {
      * @return індекс вільної комірки. Якщо вільної комірки не знайдено, то повернення значення -1
      */
     private int findAvailableRoomForEntry(K key) {
-        for (HashCodeToProbe hashCodeToProbe = new HashCodeToProbe(key.hashCode());
-             hashCodeToProbe.getH() < table.length;
-             hashCodeToProbe = hashCodeToProbe.next()) {
-            final int index = calcIndexByHashcode(hashCodeToProbe.getHashcode());
-            HashtableEntry<K, V> element = table[index];
-            if (element == null)
+        int index = calcIndexByHashcode(key.hashCode());
+        int k = 0;
+        //кількість ітерацій має бути не більшою, ніж кількість елементів в масиві
+        for (int i = 0; i < table.length; i++) {
+            //якщо вільну комірку знайдено
+            if (table[index] == null) {
                 return index;
+            }
+            k++;
+            index = (index + k * k) % table.length;
         }
         return -1;
     }
