@@ -40,10 +40,11 @@ public class NAUHashtable<K, V> {
      * @return
      */
     public int calcIndexByHashcode(int hashcode) {
-        //0x7FFFFFFF is the biggest number
-        int calculatedIndex = (hashcode & Integer.MAX_VALUE) % table.length;
-        //TODO множення на розмір
-        return calculatedIndex;
+        //Индекс вычисляется путем применения операции получения
+        //остатка от деления ключа на размерность хэш-таблицы.
+        //        Например, m=13, key = 24.
+        //h(key) = key % m = 11.
+        return Math.abs(hashcode) % table.length;
     }
 
     /**
