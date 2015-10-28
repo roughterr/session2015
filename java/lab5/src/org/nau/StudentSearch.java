@@ -11,22 +11,21 @@ public class StudentSearch {
      * @return індекс елементу. Якщо не знайдено такого елементу, то значення -1 буде повернуто
      */
     public static int interpolationSearch(Student[] sortedArray, int vatin) {
-        int low = 0;
-        int high = sortedArray.length - 1;
-        int mid;
-        while (sortedArray[low].getVatin() <= vatin && sortedArray[high].getVatin() >= vatin) {
-            if (sortedArray[high].getVatin() - sortedArray[low].getVatin() == 0)
-                return (low + high) / 2;
-            mid = low + ((vatin - sortedArray[low].getVatin()) * (high - low)) / (sortedArray[high].getVatin() - sortedArray[low].getVatin());
-            if (sortedArray[mid].getVatin() < vatin)
-                low = mid + 1;
-            else if (sortedArray[mid].getVatin() > vatin)
-                high = mid - 1;
+        int lowIndex = 0;
+        int highIndex = sortedArray.length - 1;
+        int midIndex;
+        while (sortedArray[highIndex].getVatin() != sortedArray[lowIndex].getVatin() &&
+                vatin >= sortedArray[lowIndex].getVatin() && vatin <= sortedArray[highIndex].getVatin()) {
+            midIndex = lowIndex + (vatin - sortedArray[lowIndex].getVatin()) * ((highIndex - lowIndex) / (sortedArray[highIndex].getVatin() - sortedArray[lowIndex].getVatin()));
+            if (sortedArray[midIndex].getVatin() < vatin)
+                lowIndex = midIndex + 1;
+            else if (vatin < sortedArray[midIndex].getVatin())
+                highIndex = midIndex - 1;
             else
-                return mid;
+                return midIndex;
         }
-        if (sortedArray[low].getVatin() == vatin)
-            return low;
+        if (vatin == sortedArray[lowIndex].getVatin())
+            return lowIndex;
         else
             return -1;
     }
@@ -35,23 +34,12 @@ public class StudentSearch {
      * Даний мето видаляє студента заочної форми навчання за його ідентифікаційним кодом.
      * @param studentArray масив студентів
      * @param vatin        ідентифікаційний код
-     * @return масив без видаленого студента
      */
-    public static Student[] deleteParttimeStudent(Student[] studentArray, int vatin) {
+    public static void deleteParttimeStudent(Student[] studentArray, int vatin) {
         //Знайти студента
         int index = interpolationSearch(studentArray, vatin);
-        System.out.println("Search completed.");
-        if (index != -1 && studentArray[index].isFullTime()) {
-            Student[] newArr = new Student[studentArray.length - 1];
-            int newArrIndex = 0;
-            for (int i = 0; i < studentArray.length; i++) {
-                if (index != i) {
-                    newArr[newArrIndex] = studentArray[i];
-                    newArrIndex++;
-                }
-            }
-            return newArr;
+        if (index != -1 && !studentArray[index].isFullTime()) {
+            studentArray[index].deleteStudent();
         }
-        return studentArray;
     }
 }

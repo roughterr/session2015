@@ -53,11 +53,27 @@ public class Lab5Test {
             System.out.println("Student: " + student);
         }
         //Знайти студента з неіснуючим ідентифікаційним кодом
-        assertEquals(StudentSearch.interpolationSearch(students, 17), -1);
-        //
-        Student[] afterDeleteVolkov = StudentSearch.deleteParttimeStudent(students, 17);
+        assertEquals(-1, StudentSearch.interpolationSearch(students, 17));
+        //Знайти студента з існуючим ідентифікаційним кодом
+        assertTrue("Student Natalya was not found!", StudentSearch.interpolationSearch(students, 153268730) != -1);
+        //спробувати видалити студента Vladislav Volkov.
+        StudentSearch.deleteParttimeStudent(students, 234487071);
         System.out.println("\nAfter Delete Volkov: ");
-        for (Student student : afterDeleteVolkov) {
+        //студент видалиться, бо він підпадає під критерій через те, що він вчиться на заочному.
+        for (Student student : students) {
+            if (student.getFirstName().equals("Vladislav") && student.getLastName().equals("Volkov")) {
+                assertTrue("The student was not deleted.", student.isDeleted());
+            }
+            System.out.println("Student: " + student);
+        }
+        //спробувати видалити студента Mohamed Henni.
+        StudentSearch.deleteParttimeStudent(students, 219113185);
+        System.out.println("\nAfter Mohamed Henni: ");
+        //студент не видалиться, бо він не підпадає під критерій через те, що він вчиться на денній формі навчання.
+        for (Student student : students) {
+            if (student.getFirstName().equals("Mohamed") && student.getLastName().equals("Henni")) {
+                assertFalse("The student was not deleted.", student.isDeleted());
+            }
             System.out.println("Student: " + student);
         }
     }
