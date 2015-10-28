@@ -13,6 +13,13 @@ public class Student {
     /** Номер студентського квитка. */
     private int studentCard;
 
+    public int getCourse() {
+        return course;
+    }
+
+    /** Курс. */
+    private int course;
+
     /** Показує чи студент брав участь в конференціях. */
     private boolean conferenceParticipation;
 
@@ -27,13 +34,14 @@ public class Student {
      * @param conferenceParticipation показує чи студент брав участь в конференціях
      * @param doesHaveCertificates    показує чи в студента є якісь сертифікати
      */
-    public Student(String lastname, String firstname, int studentCard, boolean conferenceParticipation,
+    public Student(String lastname, String firstname, int studentCard, int course, boolean conferenceParticipation,
                    boolean doesHaveCertificates) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.studentCard = studentCard;
         this.conferenceParticipation = conferenceParticipation;
         this.doesHaveCertificates = doesHaveCertificates;
+        this.course = course;
     }
 
     /**

@@ -40,6 +40,16 @@ public class Lab1Test {
         }
         //вивести вміст черги
         System.out.println("Final state of the queue: " + queue);
+        //видалити елементи з черги
+        queue.deleteOldestElement();
+        queue.deleteOldestElement();
+        queue.deleteOldestElement();
+        try {
+            queue.deleteOldestElement();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("After deleting from the queue: " + queue);
     }
 
     /**

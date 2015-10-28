@@ -42,6 +42,7 @@ public class NAUHashtable<K, V> {
     public int calcIndexByHashcode(int hashcode) {
         //0x7FFFFFFF is the biggest number
         int calculatedIndex = (hashcode & Integer.MAX_VALUE) % table.length;
+        //TODO множення на розмір
         return calculatedIndex;
     }
 
@@ -88,6 +89,7 @@ public class NAUHashtable<K, V> {
 
         public HashCodeToProbe next() {
             final int newH = h + 1;
+            //TODO (index * index) % size
             return new HashCodeToProbe(hashcode + (newH * newH), newH);
         }
 
