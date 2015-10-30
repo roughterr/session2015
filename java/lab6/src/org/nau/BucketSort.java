@@ -1,11 +1,14 @@
 package org.nau;
 
+import java.util.Arrays;
+
 /**
  * Даний клас містить метод з алгоритмом карманного сортування.
  */
 public class BucketSort {
     /**
      * Вираховує максимальний елемент в масиві.
+     *
      * @param array
      * @return
      */
@@ -19,6 +22,7 @@ public class BucketSort {
 
     /**
      * Сортує масив, використовуючи алгоритм карманного сортування (bucket sort).
+     *
      * @param array
      * @return
      */
@@ -29,6 +33,7 @@ public class BucketSort {
 
     /**
      * Сортує масив, використовуючи алгоритм карманного сортування (bucket sort).
+     *
      * @param array
      * @param maxValue
      * @return
@@ -47,13 +52,18 @@ public class BucketSort {
 
     /**
      * Сортує масив, використову і вираховує скільки часу пішло на сортування.
+     *
      * @param array масив, який потрібно посортувати
      * @return результат сортування
      */
     public static SortingResult sortCountingTime(int[] array) {
+        if (array.length == 100)
+            System.out.println("Before sorting: " + Arrays.toString(array));
         final long startTimeUnorderedArray1 = java.lang.System.nanoTime();
         int[] sortedArray = BucketSort.sort(array);
         final long finishTimeUnorderedArray1 = java.lang.System.nanoTime();
+        if (array.length == 100)
+            System.out.println("After sorting: " + Arrays.toString(sortedArray));
         final long sortingTime = finishTimeUnorderedArray1 - startTimeUnorderedArray1;
         return new SortingResult() {
             @Override
@@ -75,12 +85,14 @@ public class BucketSort {
     public interface SortingResult {
         /**
          * Повертає відсортований масив.
+         *
          * @return
          */
         int[] getSortedArray();
 
         /**
          * Повертає кількість часу, яке пішло на сортування.
+         *
          * @return кількість наносекунд
          */
         double getSortingTime();
