@@ -4,3 +4,4 @@ F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Ma
 F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.csproj.GenerateResource.Cache
 F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.exe
 F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.pdb
+F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.Form1.resources
