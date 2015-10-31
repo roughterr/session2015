@@ -13,22 +13,34 @@ namespace Marthe
 {
     public partial class Form1 : Form
     {
-        private static ArrayList allTheBooks { get; set; }
-
-        private static ShowAllBooksForm showAllBooksForm;
+        public static ShowAllBooksForm showAllBooksForm;
+        public static AddBookForm addBookForm;
 
         public Form1()
         {
             InitializeComponent();
-            showAllBooksForm = new ShowAllBooksForm();
-            allTheBooks = new ArrayList();
             Book book1 = new Book("David Copperfield", "Charles Dickens");
-            allTheBooks.Add(book1);
+            Book book2 = new Book("Tess of the d'Urbervilles", "Thomas Hardy");
+            AllBooks.BookList.Add(book1);
+            AllBooks.BookList.Add(book2);
+            
+            //AllBooks.BookList = new List<Book>();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Book book1 = new Book("David Copperfield", "Charles Dickens");
+            //AllBooks.BookList.Add(book1);
+            //Book book2 = new Book("Tess of the d'Urbervilles", "Thomas Hardy");
+            //AllBooks.BookList.Add(book2);
+            showAllBooksForm = new ShowAllBooksForm();
             showAllBooksForm.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            addBookForm = new AddBookForm();
+            addBookForm.Show();
         }
     }
 }
