@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Windows.Forms;
+using System.Drawing;
 
-namespace Marthe
+namespace BookShop
 {
     public class AddBookForm : Form
     {
@@ -98,7 +99,6 @@ namespace Marthe
             this.Name = "AddBookForm";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private void button2_Click(object sender, EventArgs e)

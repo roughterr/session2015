@@ -1,0 +1,9 @@
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\bin\Debug\Marthe.exe
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\bin\Debug\Marthe.pdb
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\BookShop.csproj.GenerateResource.Cache
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.exe
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.pdb
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\BookShop.AddBookForm.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\BookShop.Form1.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\BookShop.AreYouSureDeleteBook.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\BookShop.Properties.Resources.resources

@@ -8,7 +8,7 @@
     <ProjectGuid>{B3CF2F10-B198-433A-A79E-C6A87EE7073E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Marthe</RootNamespace>
+    <RootNamespace>BookShop</RootNamespace>
     <AssemblyName>Marthe</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -58,7 +58,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowAllBooks.cs">
+    <Compile Include="ShowAllBooks2.cs">
       <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="AddBookForm.resx">
@@ -75,9 +75,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShowAllBooks.resx">
-      <DependentUpon>ShowAllBooks.cs</DependentUpon>
+    <EmbeddedResource Include="ShowAllBooks2.resx">
+      <DependentUpon>ShowAllBooks2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

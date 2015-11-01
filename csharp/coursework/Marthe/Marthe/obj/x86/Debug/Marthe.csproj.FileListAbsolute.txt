@@ -8,3 +8,14 @@ F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Ma
 F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.pdb
 F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.csprojResolveAssemblyReference.cache
 F:\user20121015\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.AddBookForm.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.exe
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.pdb
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\bin\Debug\Marthe.exe
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\bin\Debug\Marthe.pdb
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.csprojResolveAssemblyReference.cache
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.AddBookForm.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.Form1.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.Properties.Resources.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.ShowAllBooksForm.resources
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.csproj.GenerateResource.Cache
+F:\userdata\roma\doc\nau\session2015\csharp\coursework\Marthe\Marthe\obj\x86\Debug\Marthe.AreYouSureDeleteBook.resources
