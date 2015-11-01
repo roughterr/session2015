@@ -13,7 +13,7 @@ namespace BookShop
 {
     public partial class Form1 : Form
     {
-        public static ShowAllBooks2 showAllBooksForm2;
+        public static ShowAllBooks showAllBooksForm2;
         public static AddBookForm addBookForm;
 
         public Form1()
@@ -33,7 +33,7 @@ namespace BookShop
 
         private void button3_Click(object sender, EventArgs e)
         {
-            showAllBooksForm2 = new ShowAllBooks2();
+            showAllBooksForm2 = new ShowAllBooks();
             showAllBooksForm2.Show();
         }
     }

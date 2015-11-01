@@ -72,9 +72,9 @@ namespace BookShop
         }
     }
 
-    public class ShowAllBooks2 : Form
+    public class ShowAllBooks : Form
     {
-        public ShowAllBooks2()
+        public ShowAllBooks()
         {
             InitializeComponent();
         }
