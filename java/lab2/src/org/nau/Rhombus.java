@@ -77,7 +77,7 @@ public class Rhombus {
      * Розраховує площу ромба.
      * @return
      */
-    public double calcuateArea() {
+    public double calculateArea() {
         final double diagonalAC = calculateDistanceBetweenTwoPoints(a.getX(), a.getY(), c.getX(), c.getY());
         final double diagonalBD = calculateDistanceBetweenTwoPoints(b.getX(), b.getY(), d.getX(), d.getY());
         return (diagonalAC * diagonalBD) / 2.0;
@@ -119,7 +119,8 @@ public class Rhombus {
     @Override
     public String toString() {
         Formatter formatter = new Formatter();
-        formatter.format("vertex1: %1$2s,\n vertex2: %2$2s,\n vertex3: %3$2s,\n vertex4: %4$2s", a, b, c, d);
+        //formatter.format("vertex1: %1$2s,\n vertex2: %2$2s,\n vertex3: %3$2s,\nvertex4: %4$2s", a, b, c, d);
+        formatter.format("vertex1: %1$2s, vertex2: %2$2s, vertex3: %3$2s,vertex4: %4$2s, perimeter: %5$2s", a, b, c, d, calculatePerimeter());
         return formatter.toString();
     }
 
